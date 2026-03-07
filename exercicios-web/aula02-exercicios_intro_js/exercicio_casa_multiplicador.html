@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 02 - Desafio para casa: JavaScript Básico | O Multiplicador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Google Sans Code', monospace;
+      transition: all 0.3s ease;
+      padding: 0;
+      margin:0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #111;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background: crimson;
+      color: #fff;
+      border: 0;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="txt-valor">0</h1>
+  <button id="btn-dobrar" onclick="multiplicador()">Dobrar</button>
+
+  <script>
+    let valor = 2;
+    const textoValor = document.getElementById('txt-valor');
+    textoValor.innerText = valor;
+
+    function multiplicador() {
+      valor *= 2;
+      textoValor.innerText = valor;
+      if(valor > 100) {
+        alert(`Cuidado, o número ${valor} está ficando muito grande!`);
+      }
+    } 
+  </script>
+</body>
+
+</html>

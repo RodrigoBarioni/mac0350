@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 02 - Desafio para casa: JavaScript Básico | O Interruptor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Google Sans Code', monospace;
+      transition: all 0.3s ease;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #111;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background: crimson;
+      color: #fff;
+      border: 0;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    h2 {
+      color: white;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 id="txt-luz">A luz está APAGADA</h2>
+  <button id="btn-interruptor" onclick="alternarLuz()">Alternar Luz</button>
+
+  <script>
+    const luz = document.getElementById('txt-luz');
+    const interruptor = document.getElementById('btn-interruptor');
+    function alternarLuz() {
+      if (luz.textContent === "A luz está APAGADA") {
+        document.body.style.backgroundColor = "#fafafa";
+        luz.innerHTML = "A luz está ACESA";
+        luz.style.color = "#111";
+      } else {
+        document.body.style.backgroundColor = "#111";
+        luz.innerText = "A luz está APAGADA";
+        luz.style.color = "#fafafa";
+      }
+    }
+  </script>
+</body>
+
+</html>
