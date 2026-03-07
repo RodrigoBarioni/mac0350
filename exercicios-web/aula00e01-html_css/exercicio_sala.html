@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <title>Jupiterweb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: all .3s ease;
+      font-family: 'Roboto';
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      width: 100%;
+      padding: 1rem;
+      height: 5rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    header>div {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      gap: .5rem;
+    }
+
+    header>div img {
+      height: 2rem;
+    }
+
+    .jupiterweb{
+      font-family: 'Google Sans Code', monospace;
+    }
+
+    usp-colors {
+      display: block;
+      height: 1rem !important;
+      background: linear-gradient(to bottom, #fcb421 33.33%, #64c4d2 33.33% 66.66%, #1094ab 66.66%);
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+
+    menu {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 8;
+      padding: 1rem;
+      gap: 1rem;
+      width: 100%;
+      height: 100%;
+      border-right: 2px solid #e0e0e0;
+    }
+
+    menu>div {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      align-items: stretch;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+    }
+
+    menu>div a {
+      text-decoration: none;
+      padding-bottom: .1rem;
+      border-bottom: 1px solid transparent;
+      color: #121212;
+      font-size: .9rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-content: center;
+    }
+
+    menu>div a:hover {
+      border-bottom: 1px solid #1094ab;
+    }
+
+    menu>div p {
+      text-transform: uppercase;
+      font-size: .8rem;
+      color: #1094ab;
+      font-weight: bold;
+      border-bottom: 2px dotted #1094ab;
+      padding-bottom: .1rem;
+      font-family: 'Google Sans Code', monospace;
+    }
+
+    content {
+      padding: 1rem;
+      flex-shrink: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    content>form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+      padding-top: 3rem;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    content>form h2 {
+      color: #1094ab;
+    }
+
+    content>form p {
+      color: #121212;
+      text-transform: uppercase;
+      font-size: .8rem;
+      font-weight: bold;
+    }
+
+    input {
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      padding: .5rem;
+      width: 100%;
+    }
+
+    input:focus {
+      border: 1px solid #1094ab;
+      outline: none;
+    }
+
+    content>form button {
+      background-color: #1094ab;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: .5rem 1rem;
+      width: 100%;
+    }
+
+    content>form button:hover {
+      background-color: #1094abcc;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      width: 100%;
+      padding: 1rem;
+      height: 5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="usp-logo.png">
+      <img src="usp-logo-texto.png">
+    </div>
+    <div>
+      <p class="jupiterweb">Jupiterweb</p>
+    </div>
+  </header>
+  <usp-colors></usp-colors>
+  <main>
+    <menu>
+      <div>
+        <p>Público</p>
+        <a href="">Calendário Escolar</a>
+        <a href="">Cursos de Ingresso</a>
+        <a href="">Disciplina</a>
+        <a href="">Editais</a>
+        <a href="">FAQ</a>
+      </div>
+      <div>
+        <p>Acesso Restrito</p>
+        <a href="">Entrar</a>
+        <a href="">Esqueci a Senha</a>
+        <a href="">Primeiro Acesso</a>
+      </div>
+    </menu>
+    <content>
+      <form>
+        <h2>Bem-vindo ao Jupiterweb</h2>
+        <p>Entre para continuar no sistema restrito</p>
+        <input type="text" placeholder="Usuário">
+        <input type="password" placeholder="Senha">
+        <button>Entrar</button>
+      </form>
+    </content>
+  </main>
+  <usp-colors></usp-colors>
+  <footer>
+    <font face="Arial, Helvetica, sans-serif" size="1">
+      <a href="https://uspdigital.usp.br/jupiterweb/creditos.jsp" target="_blank">Créditos</a>
+      | <a href="https://uspdigital.usp.br/jupiterweb/jupColegiadoEmailLista" target="_blank">Fale conosco</a><br>
+      © 1999 - 2026 - Superintendência de Tecnologia da Informação/USP
+    </font>
+  </footer>
+
+</body>
+
+</html>
