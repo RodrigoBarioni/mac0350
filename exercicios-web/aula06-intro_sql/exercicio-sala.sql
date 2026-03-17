@@ -6,7 +6,7 @@ CREATE TABLE entregador (
 
 CREATE TABLE cliente (
 	cliente_id	INTEGER PRIMARY KEY,
-  	     TEXT,
+    nome TEXT,
     contato TEXT,
     endereco_id INTEGER
 );
