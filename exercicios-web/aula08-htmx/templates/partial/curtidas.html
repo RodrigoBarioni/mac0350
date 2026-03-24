@@ -1,0 +1,4 @@
+<h2>Curtidas</h2>
+<p><b id="curtidas">{{ curtidas }}</b> curtidas</p>
+<button hx-post="/home/curtir" hx-target="#curtidas" hx-push-url="false">Curtir</button>
+<button hx-delete="/home/curtir" hx-target="#curtidas" hx-push-url="false" hx-confirm="Deseja realmente limpar as curtidas?">Limpar curtidas</button>
