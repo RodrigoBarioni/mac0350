@@ -10,7 +10,7 @@ curtidas = int(0)
 
 @app.get("/home",response_class=HTMLResponse)
 async def root(request: Request):
-    return templates.TemplateResponse(request, "index.html", {"pagina": "/home  /pagina1"})
+    return templates.TemplateResponse(request, "index.html", {"pagina": "/home/pagina1"})
 
 @app.get("/home/pagina1", response_class=HTMLResponse)
 async def pag1(request: Request):
