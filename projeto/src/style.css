@@ -407,7 +407,7 @@ textarea {
   overflow-y: scroll;
 }
 
-@media (max-width: 900px) or (max-height: 600px) {
+@media (max-width: 1000px) or (max-height: 600px) {
   .main {
     display: block;
   }
@@ -428,6 +428,22 @@ textarea {
     padding-bottom: 1rem;
   }
 
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr)) !important;
+    gap: .5rem !important;
+  }
+
+  .card>div.footer {
+    gap: .5rem !important;
+    flex-wrap: inherit !important;
+  }
+}
+
+@media (max-width: 700px) {
+    .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr)) !important;
+    gap: .5rem !important;
+  }
 }
 
 .grid-container {
