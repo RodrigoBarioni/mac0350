@@ -1,0 +1,31 @@
+<title hx-swap-oob="true">{{ titulo if titulo else "Bloco de tarefas sem título" }}</title>
+{% if bloco %}
+<div class="top"
+  style="background: url('{% if bloco.cover %}{{ bloco.cover }}{% endif %}'); background-size: cover; background-position: center;">
+  <div>
+    {% if bloco.icon %}
+    <img src="{{ bloco.icon }}" width="48px" height="48px" alt="ícone do bloco de tarefas">
+    {% endif %}
+    <p>{{ bloco.title }}</p>
+    <button hx-get="/blocos/{{ bloco.id }}/editar" hx-target="#modal" hx-on::after-request="MicroModal.show('modal')"
+      class="btn-edit-title" data-tippy-content="Editar informações do bloco"><span
+        class="material-symbols-outlined">stylus_note</span></button>
+  </div>
+  <div>
+    <button hx-post="/blocos/{{ bloco.id }}/tarefa" hx-target=".grid-container" hx-push-url="false"
+      class="btn-new-task"><span class="material-symbols-outlined">add_ad</span>Nova tarefa</button>
+    <atalho hx-post="/blocos/{{ bloco.id }}/tarefa" hx-target=".grid-container" hx-push-url="false"
+      hx-trigger="keyup[shiftKey&&altKey&&(key=='n'||key=='N')] from:html"></atalho>
+  </div>
+</div>
+<div class="bottom">
+  <div class="grid-container">
+    {% include "card.html" %}
+  </div>
+</div>
+{% else %}
+<div class="top">
+</div>
+<div class="bottom">
+</div>
+{% endif %}

@@ -1,0 +1,31 @@
+{% if bloco %}
+{% for tarefa in tarefas %}
+<div class="card {{ 'concluida' if tarefa.completed else 'nao-concluida' }}">
+  <div class="header {{ 'header-full' if not tarefa.description else '' }}">
+    <small class="{{ 'concluida' if tarefa.completed else 'nao-concluida' }}">{{ "concluída" if tarefa.completed else
+      "não concluída" }}</small>
+    <p>{{ tarefa.title }}</p>
+  </div>
+  {% if tarefa.description %}
+  <div class="content">
+    <p>{{ tarefa.description }}</p>
+  </div>
+  {% endif %}
+  <div class="footer">
+    {% if not tarefa.completed %}
+    <button hx-put="/blocos/{{ bloco.id }}/tarefas/{{ tarefa.id }}/alternar" hx-target=".grid-container"
+      class="btn-complete-task"><span class="material-symbols-outlined">check_circle</span></button>
+    {% else %}
+    <button hx-put="/blocos/{{ bloco.id }}/tarefas/{{ tarefa.id }}/alternar" hx-target=".grid-container"
+      class="btn-undo-complete"><span class="material-symbols-outlined">cancel</span></button>
+    {% endif %}
+    <button hx-get="/blocos/{{ bloco.id }}/tarefas/{{ tarefa.id }}/editar" hx-target="#modal-tarefa"
+      hx-on::after-request="MicroModal.show('modal-tarefa')" class="btn-edit-task"><span
+        class="material-symbols-outlined">edit_note</span></button>
+    <button hx-delete="/blocos/{{ bloco.id }}/tarefas/{{ tarefa.id }}"
+      hx-confirm="Excluir tarefa &quot;{{ tarefa.title }}&quot;?" hx-target=".grid-container" hx-push-url="false"
+      class="btn-delete-task"><span class="material-symbols-outlined">delete</span></button>
+  </div>
+</div>
+{% endfor %}
+{% endif %}

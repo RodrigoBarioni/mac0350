@@ -1,0 +1,17 @@
+{% for bloco in blocos %}
+<div class="block-item" id="bloco-{{ bloco.id }}">
+  {% if bloco.icon %}
+  <img src="{{ bloco.icon }}">
+  {% endif %}
+  <p hx-get="/blocos/{{ bloco.id }}" hx-target=".right" hx-push-url="true">{{ bloco.title }}</p>
+  <button hx-get="/blocos/{{ bloco.id }}/editar" hx-target="#modal" hx-on::after-request="MicroModal.show('modal')"
+    class="btn-edit">
+    <span class="material-symbols-outlined">stylus_note</span>
+  </button>
+  <button hx-delete="/blocos/{{ bloco.id }}"
+    hx-confirm="Excluir bloco &quot;{{ bloco.title }}&quot; e todas suas tarefas?" hx-target=".blocks"
+    hx-push-url="false" class="btn-delete">
+    <span class="material-symbols-outlined">delete</span>
+  </button>
+</div>
+{% endfor %}

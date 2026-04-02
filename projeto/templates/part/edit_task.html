@@ -1,0 +1,25 @@
+<div class="modal__overlay" tabindex="-1">
+  <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <header class="modal__header">
+      <h2 class="modal__title" id="modal-title">
+        Editar tarefa
+      </h2>
+      <button class="modal__close" aria-label="Fechar edição" data-micromodal-close></button>
+    </header>
+    <form hx-put="/blocos/{{ tarefa.block_id }}/tarefas/{{ tarefa.id }}" hx-on:htmx:after-request="if(event.detail.successful) MicroModal.close('modal-tarefa');" hx-target=".grid-container">
+      <div class="modal__content" id="modal-content">
+        <label>Título da tarefa</label>
+        <input type="text" name="title" placeholder="Minha tarefa" value="{{ tarefa.title or '' }}" required>
+
+        <div class="flex-input"><label>Descrição da tarefa</label>OPCIONAL</div>
+        <textarea name="description" placeholder="Minha descrição da tarefa">{{ tarefa.description or '' }}</textarea>
+
+      </div>
+      <footer class="modal__footer">
+        <button type="submit" class="modal__btn modal__btn-primary">Salvar</button>
+        <button type="button" class="modal__btn" data-micromodal-close
+          aria-label="Fechar a edição de tarefa">Fechar</button>
+      </footer>
+    </form>
+  </div>
+</div>

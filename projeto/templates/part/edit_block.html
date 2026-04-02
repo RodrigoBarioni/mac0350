@@ -1,0 +1,31 @@
+<div class="modal__overlay" tabindex="-1">
+  <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <header class="modal__header">
+      <h2 class="modal__title" id="modal-title">
+        Editar bloco de tarefas
+      </h2>
+      <button class="modal__close" aria-label="Fechar edição" data-micromodal-close></button>
+    </header>
+    <form hx-put="/blocos/{{ bloco.id }}" hx-on:htmx:after-request="if(event.detail.successful) MicroModal.close('modal');" hx-target=".blocks">
+      <div class="modal__content" id="modal-content">
+        <label>Título do bloco de tarefas</label>
+        <input type="text" name="title" value="{{ bloco.title or '' }}" required>
+
+        <div class="flex-input"><label>URL do ícone (imagem)</label>OPCIONAL</div>
+        <input type="url" pattern="https?://.*\.(jpg|jpeg|png|gif|webp|svg)(\?.*)?"
+          title="A URL deve terminar em .jpg, .jpeg, .png, .gif, .webp ou .svg" name="icon"
+          value="{{ bloco.icon or '' }}">
+        
+        <div class="flex-input"><label>URL da Capa (imagem)</label>OPCIONAL</div>
+        <input type="url" pattern="https?://.*\.(jpg|jpeg|png|gif|webp|svg)(\?.*)?"
+          title="A URL deve terminar em .jpg, .jpeg, .png, .gif, .webp ou .svg" name="cover"
+          value="{{ bloco.cover or '' }}">
+      </div>
+      <footer class="modal__footer">
+        <button type="submit" class="modal__btn modal__btn-primary">Salvar</button>
+        <button type="button" class="modal__btn" data-micromodal-close
+          aria-label="Fechar a edição de bloco de tarefas">Fechar</button>
+      </footer>
+    </form>
+  </div>
+</div>
