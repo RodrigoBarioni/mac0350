@@ -22,3 +22,14 @@ Para executar o projeto em modo desenvolvimento:
 4. Instale as dependências com `pip install -r requirements.txt`.
 5. Execute o comando `fastapi dev` para iniciar o servidor em modo de desenvolvimento.
 6. Acesse `http://127.0.0.1:8000` no seu navegador para usar a aplicação.
+
+## Uso de IA no projeto
+
+A IA foi utilizada para auxiliar nas seguintes tarefas:
+- Escolha de bibliotecas de tooltip e modal para o frontend.
+- Dúvidas sobre utilização de htmx para tarefas específicas.
+- Dúvidas de melhores práticas para nomes de arquivos, funções, variáveis, etc.
+- Dúvida e escolha de melhor prática para implementação de modo escuro/claro em css + javascript.
+- Correção de bibliotecas faltantes do fastapi e do sqlmodel na main do projeto.
+- No frontend, o css e a responsividade do grid de tarefas foram feitos com auxílio da IA, um exemplo disso é a classe `grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));` (sendo modificado para `grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr)) !important;`, por mim) que foi sugerida pela IA para criar um grid funcional.
+- No backend algumas dúvidas de sintax, estrutura do python e do fastapi, alguns retornos corretos para melhor funcionamento da aplicação e dúvidas gerais foram resolvidas com auxílio da IA.
